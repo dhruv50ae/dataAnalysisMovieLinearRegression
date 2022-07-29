@@ -1,16 +1,16 @@
-# This is a sample Python script.
+from pandas import *
+import matplotlib.pyplot as plt
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+data = read_csv("cost-revenue-movies.csv")
 
+x = DataFrame(data, columns=["productionBudgetUSD"])
+y = DataFrame(data, columns=["worldwideGrossUSD"])
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+plt.figure(figsize=(10, 6))
+plt.scatter(x, y, alpha=0.3)
+plt.title("Film Cost vs Global Revenue")
+plt.xlabel("Production Budget ($)")
+plt.ylabel("Worldwide Gross ($)")
+plt.ylim(0, 3000000000)
+plt.xlim(0, 450000000)
+plt.show()
