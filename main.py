@@ -2,7 +2,7 @@ from pandas import *
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
-data = read_csv("cost-revenue-movies.csv")
+data = read_csv("costRevenue.csv.csv")
 
 x = DataFrame(data, columns=["productionBudgetUSD"])
 y = DataFrame(data, columns=["worldwideGrossUSD"])
